@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face { font-family: 'UthmanicHafs'; src: url('./UthmanicHafs_V20.ttf') format('truetype'); }
+        .font-uthmanic { font-family: 'UthmanicHafs', sans-serif; }
+    </style>
+    <title>Harakaat Remover Example</title>
+</head>
+<body style="padding: 24px; font-family: 'UthmanicHafs', sans-serif;">
+    <h1>Harakaat Remover Example</h1>
+    
+    <div>
+        <p>This is an example of text without changing harakaat color:</p>
+        <p id="textWithHarakaat">هَذَا <span style="color:#EF4444;">نَصٌّ</span> بِالْحَرَكَاتِ</p>
+    </div>
+    
+    <div>
+        <p>After coloring harakaat:</p>
+        <div id="output"></div> <!-- Use a div to set inner HTML -->
+    </div>
+
+    <!-- Include the compiled JavaScript file -->
+    <script src="app.js"></script>
+
+    <script>
+        // Call the removeHarakaat function when the page loads
+        window.onload = function() {
+            // Example text with harakaat
+            var textWithHarakaat = document.getElementById("textWithHarakaat").innerHTML;
+
+            // Call the removeHarakaat function and get the cleaned text and HTML
+            document.getElementById("output").innerHTML = colorHarakaat(textWithHarakaat,[7], [1,3], [8]);
+        };
+    </script>
+</body>
+</html>
